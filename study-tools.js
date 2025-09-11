@@ -1,5 +1,8 @@
 // Mobile Navigation and Keyword Search Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize dark mode
+    initializeDarkMode();
+    
     // Mobile Navigation Toggle
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
@@ -8,6 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
         navToggle.addEventListener('click', function() {
             navToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+        });
+    }
+    
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', function() {
+            toggleDarkMode();
         });
     }
     
@@ -120,6 +131,42 @@ document.addEventListener('DOMContentLoaded', function() {
     function hideNoResults() {
         if (noResults) {
             noResults.style.display = 'none';
+        }
+    }
+    
+    // Dark Mode Functions
+    function initializeDarkMode() {
+        const darkMode = localStorage.getItem('darkMode');
+        if (darkMode === 'enabled') {
+            enableDarkMode();
+        }
+    }
+    
+    function toggleDarkMode() {
+        const darkMode = localStorage.getItem('darkMode');
+        if (darkMode !== 'enabled') {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+    }
+    
+    function enableDarkMode() {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+        updateToggleIcon('☀️');
+    }
+    
+    function disableDarkMode() {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', null);
+        updateToggleIcon('🌙');
+    }
+    
+    function updateToggleIcon(icon) {
+        const toggleIcon = document.querySelector('.toggle-icon');
+        if (toggleIcon) {
+            toggleIcon.textContent = icon;
         }
     }
 });

@@ -20,6 +20,9 @@
                     <span></span>
                     <span></span>
                 </div>
+                <div class="dark-mode-toggle" id="darkModeToggle">
+                    <span class="toggle-icon">🌙</span>
+                </div>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="classes.html" class="active">Classes</a></li>
@@ -49,14 +52,19 @@
                 </div>
                 
                 <div class="classes-grid" id="classesGrid">
-                    <div class="class-card" data-class="aerospace journey of flight" data-level="freshman sophomore">
+                    <div class="class-card" data-class="aerospace journey of flight" data-level="freshman sophomore junior senior">
                         <h3>Aerospace Journey of Flight</h3>
                         <p>Explore the fundamentals of aviation and aerospace engineering</p>
                         <div class="class-meta">
                             <span class="department">Engineering</span>
                             <span class="department">Aerospace</span>
-                            <span class="freshman-tag">Freshman</span>
-                            <span class="sophomore-tag">Sophomore</span>
+                            <div class="tags-container">
+                                <span class="freshman-tag">Freshman</span>
+                                <span class="sophomore-tag">Sophomore</span>
+                                <span class="junior-tag hidden-tag">Junior</span>
+                                <span class="senior-tag hidden-tag">Senior</span>
+                                <span class="more-tags" title="Click to see more tags">+2</span>
+                            </div>
                         </div>
                         <a href="aerospace-journey-of-flight.html" class="btn btn-secondary">View Class</a>
                     </div>
@@ -97,6 +105,7 @@
     </footer>
 
     <script src="classes.js"></script>
+    <script src="class-cards.js"></script>
     <script src="study-tools.js"></script>
 </body>
 </html>

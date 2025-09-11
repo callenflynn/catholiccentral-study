@@ -85,6 +85,33 @@ header {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode .toggle-icon {
+    transform: rotate(180deg);
+}
+
 .nav-menu a {
     color: white;
     text-decoration: none;
@@ -381,6 +408,8 @@ header {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .class-meta span {
@@ -389,6 +418,39 @@ header {
     border-radius: 15px;
     font-size: 0.8rem;
     color: #666;
+}
+
+.tags-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.hidden-tag {
+    display: none;
+}
+
+.tags-container.expanded .hidden-tag {
+    display: inline-block;
+}
+
+.more-tags {
+    background: #6c757d !important;
+    color: white !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.more-tags:hover {
+    background: #495057 !important;
+    transform: scale(1.05);
+}
+
+.tags-container.expanded .more-tags {
+    display: none;
 }
 
 .freshman-tag {
@@ -832,6 +894,19 @@ footer {
         font-size: 0.8rem;
     }
     
+    .class-meta {
+        gap: 0.5rem;
+    }
+    
+    .tags-container {
+        gap: 0.25rem;
+    }
+    
+    .class-meta span {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+    
     .keyword-search {
         flex-direction: column;
         gap: 0.5rem;
@@ -866,4 +941,113 @@ footer {
     .study-notes h3 {
         font-size: 1.1rem;
     }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text-color: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --border-color: #404040;
+    --input-bg: #3a3a3a;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.dark-mode .hero {
+    background: linear-gradient(135deg, #2d3748, #4a5568);
+}
+
+.dark-mode .class-card,
+.dark-mode .upload-box,
+.dark-mode .study-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px var(--shadow);
+}
+
+.dark-mode .class-card p,
+.dark-mode .chapter-description {
+    color: var(--text-secondary);
+}
+
+.dark-mode .breadcrumb a {
+    color: #60a5fa;
+}
+
+.dark-mode .breadcrumb span {
+    color: var(--text-secondary);
+}
+
+.dark-mode .filter-btn {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .filter-btn:hover,
+.dark-mode .filter-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.dark-mode .search-input,
+.dark-mode #keywordSearch {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .search-input::placeholder,
+.dark-mode #keywordSearch::placeholder {
+    color: #888;
+}
+
+.dark-mode .search-info {
+    color: var(--text-secondary);
+}
+
+.dark-mode .no-results p {
+    color: var(--text-secondary);
+}
+
+.dark-mode .summary-box {
+    background-color: var(--input-bg);
+    border-left: 4px solid #60a5fa;
+}
+
+.dark-mode .image-container {
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .teacher-info {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode footer {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.dark-mode .footer-link {
+    color: #60a5fa;
+}
+
+.dark-mode .dark-mode-toggle {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .toggle-icon {
+    filter: brightness(1.2);
 }
