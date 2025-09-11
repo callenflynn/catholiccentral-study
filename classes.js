@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                cardDescription.includes(searchTerm);
 
             // Check level filter
-            const levelMatch = currentFilter === 'all' || cardLevel === currentFilter;
+            const levelMatch = currentFilter === 'all' || cardLevel.includes(currentFilter);
 
             if (searchMatch && levelMatch) {
                 card.style.display = 'block';
