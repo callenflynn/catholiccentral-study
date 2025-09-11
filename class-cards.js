@@ -16,6 +16,12 @@ function initializeTagContainers() {
     const tagContainers = document.querySelectorAll('.tags-container');
     
     tagContainers.forEach(container => {
+        // Skip aerospace class - let tags wrap naturally
+        const classCard = container.closest('.class-card');
+        if (classCard && classCard.querySelector('h3').textContent.includes('Aerospace')) {
+            return;
+        }
+        
         const allTags = container.querySelectorAll('span:not(.more-tags)');
         const visibleTags = [];
         const hiddenTags = [];

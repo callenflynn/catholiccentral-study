@@ -39,6 +39,13 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+.nav-brand:hover {
+    opacity: 0.8;
 }
 
 .nav-logo {
@@ -89,22 +96,23 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     cursor: pointer;
-    margin-left: 1rem;
     transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode-toggle:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .toggle-icon {
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: transform 0.3s ease;
 }
 
@@ -409,7 +417,7 @@ header {
     gap: 1rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .class-meta span {
@@ -426,31 +434,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-}
-
-.hidden-tag {
-    display: none;
-}
-
-.tags-container.expanded .hidden-tag {
-    display: inline-block;
-}
-
-.more-tags {
-    background: #6c757d !important;
-    color: white !important;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.more-tags:hover {
-    background: #495057 !important;
-    transform: scale(1.05);
-}
-
-.tags-container.expanded .more-tags {
-    display: none;
+    max-width: 100%;
 }
 
 .freshman-tag {
@@ -896,10 +880,13 @@ footer {
     
     .class-meta {
         gap: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
     }
     
     .tags-container {
         gap: 0.25rem;
+        width: 100%;
     }
     
     .class-meta span {
@@ -952,6 +939,7 @@ footer {
     --border-color: #404040;
     --input-bg: #3a3a3a;
     --shadow: rgba(0, 0, 0, 0.3);
+    --hover-bg: #404040;
 }
 
 .dark-mode body {
@@ -959,21 +947,38 @@ footer {
     color: var(--text-color);
 }
 
+.dark-mode header {
+    background: linear-gradient(135deg, #2d3748, #4a5568);
+}
+
 .dark-mode .hero {
     background: linear-gradient(135deg, #2d3748, #4a5568);
 }
 
+.dark-mode .hero h1,
+.dark-mode .hero p {
+    color: white;
+}
+
 .dark-mode .class-card,
 .dark-mode .upload-box,
-.dark-mode .study-content {
+.dark-mode .study-content,
+.dark-mode .units-grid .unit-card {
     background-color: var(--card-bg);
     color: var(--text-color);
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 6px var(--shadow);
 }
 
+.dark-mode .class-card:hover,
+.dark-mode .unit-card:hover {
+    background-color: var(--hover-bg);
+    transform: translateY(-5px);
+}
+
 .dark-mode .class-card p,
-.dark-mode .chapter-description {
+.dark-mode .chapter-description,
+.dark-mode .upload-info ul li {
     color: var(--text-secondary);
 }
 
@@ -1020,10 +1025,12 @@ footer {
 .dark-mode .summary-box {
     background-color: var(--input-bg);
     border-left: 4px solid #60a5fa;
+    color: var(--text-color);
 }
 
 .dark-mode .image-container {
     border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
 }
 
 .dark-mode .teacher-info {
@@ -1034,20 +1041,61 @@ footer {
 .dark-mode footer {
     background-color: var(--card-bg);
     color: var(--text-color);
+    border-top: 1px solid var(--border-color);
 }
 
 .dark-mode .footer-link {
     color: #60a5fa;
 }
 
+.dark-mode .disclaimer {
+    color: var(--text-secondary);
+}
+
 .dark-mode .dark-mode-toggle {
     background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode .dark-mode-toggle:hover {
     background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .dark-mode .toggle-icon {
     filter: brightness(1.2);
+}
+
+.dark-mode .class-meta span {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .department {
+    background-color: #4a5568 !important;
+    color: white !important;
+}
+
+.dark-mode .keyword-search-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .highlight {
+    background-color: #fbbf24;
+    color: #1a1a1a;
+}
+
+.dark-mode .upload-section {
+    background-color: var(--bg-color);
+}
+
+.dark-mode .classes-section {
+    background-color: var(--bg-color);
+}
+
+.dark-mode .chapter-detail,
+.dark-mode .class-detail {
+    background-color: var(--bg-color);
 }
