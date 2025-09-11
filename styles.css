@@ -185,6 +185,48 @@ header {
     border-color: #667eea;
 }
 
+.filter-container {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.filter-container h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #ddd;
+    background: white;
+    color: #666;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-color: #667eea;
+    color: white;
+}
+
 .classes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -231,6 +273,21 @@ header {
 
 .freshman-tag {
     background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    color: white !important;
+}
+
+.sophomore-tag {
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+    color: white !important;
+}
+
+.junior-tag {
+    background: linear-gradient(135deg, #fd7e14, #ffc107) !important;
+    color: white !important;
+}
+
+.senior-tag {
+    background: linear-gradient(135deg, #dc3545, #e74c3c) !important;
     color: white !important;
 }
 
