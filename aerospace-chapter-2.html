@@ -15,7 +15,12 @@
                     <img src="crest.png" alt="DCC Crest" class="nav-logo">
                     <h1>DCC Study Tools</h1>
                 </div>
-                <ul class="nav-menu">
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="classes.html">Classes</a></li>
                     <li><a href="https://github.com/callenflynn/catholiccentral-study" target="_blank">GitHub</a></li>
@@ -37,6 +42,16 @@
                 <p class="chapter-description">
                     Study materials covering Early Aviation Developments and World War I.
                 </p>
+
+                <!-- Keyword Search -->
+                <div class="keyword-search-container">
+                    <input type="text" id="keywordSearch" placeholder="Search for keywords in this chapter...">
+                    <div id="searchInfo" class="search-info"></div>
+                </div>
+                
+                <div id="noResults" class="no-results" style="display: none;">
+                    <p>No results found. Try different keywords or check your spelling.</p>
+                </div>
 
                 <div class="study-content">
                     <div class="content-header">
@@ -127,9 +142,11 @@
     <footer>
         <div class="container">
             <p>2025 DCC Study Tools</p>
-            <p><a href="https://github.com/callenflynn/" target="_blank" class="footer-link">More Projects</a></p>
+            <p><a href="https://github.com/callenflynn/" target="_blank" class="footer-link">More Projects</a> | <a href="https://forms.gle/VcRkuB8tfkLHttt98" target="_blank" class="footer-link">Report Error</a></p>
             <p class="disclaimer">This site is NOT affiliated with Detroit Catholic Central and is not managed by staff</p>
         </div>
     </footer>
+    
+    <script src="study-tools.js"></script>
 </body>
 </html>
