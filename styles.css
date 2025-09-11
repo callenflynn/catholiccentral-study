@@ -395,6 +395,26 @@ header {
     margin-bottom: 1rem;
 }
 
+.summary-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.summary-box h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.summary-box p {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
 /* Footer */
 footer {
     background: #333;
