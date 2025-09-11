@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes - DCC Study Tools</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1>DCC Study Tools</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="classes.html" class="active">Classes</a></li>
+                    <li><a href="https://github.com/callenflynn/" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="classes-section">
+            <div class="container">
+                <h1>Browse Classes</h1>
+                <div class="search-container">
+                    <input type="text" id="classSearch" placeholder="Search for classes...">
+                </div>
+                
+                <div class="classes-grid" id="classesGrid">
+                    <div class="class-card" data-class="aerospace journey of flight">
+                        <h3>Aerospace Journey of Flight</h3>
+                        <p>Explore the fundamentals of aviation and aerospace engineering</p>
+                        <div class="class-meta">
+                            <span class="department">Engineering</span>
+                            <span class="units">Multiple Units</span>
+                        </div>
+                        <a href="aerospace-journey-of-flight.html" class="btn btn-secondary">View Class</a>
+                    </div>
+                </div>
+                
+                <div id="noResults" class="no-results" style="display: none;">
+                    <p>No classes found matching your search.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DCC Study Tools. Made by students, for students.</p>
+        </div>
+    </footer>
+
+    <script src="classes.js"></script>
+</body>
+</html>
