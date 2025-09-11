@@ -343,6 +343,58 @@ header {
     border-radius: 10px;
 }
 
+/* Study Notes Styling */
+.study-notes {
+    line-height: 1.7;
+}
+
+.study-notes h1 {
+    color: #1e3c72;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #667eea;
+}
+
+.study-notes h2 {
+    color: #2a5298;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid #667eea;
+}
+
+.study-notes h3 {
+    color: #4a5568;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.study-notes ul {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.study-notes li {
+    margin-bottom: 0.5rem;
+}
+
+.study-notes ul ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.study-notes strong {
+    color: #2a5298;
+    font-weight: 600;
+}
+
+.study-notes p {
+    margin-bottom: 1rem;
+}
+
 /* Footer */
 footer {
     background: #333;
