@@ -510,6 +510,13 @@ footer {
     text-decoration: underline;
 }
 
+.disclaimer {
+    font-size: 0.8rem;
+    color: #ccc;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
