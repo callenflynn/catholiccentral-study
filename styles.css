@@ -35,9 +35,21 @@ header {
     align-items: center;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+}
+
 .nav-container h1 {
     font-size: 1.5rem;
     font-weight: 600;
+    margin: 0;
 }
 
 .nav-menu {
