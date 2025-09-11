@@ -229,6 +229,11 @@ header {
     color: #666;
 }
 
+.freshman-tag {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    color: white !important;
+}
+
 .no-results {
     text-align: center;
     color: #666;
