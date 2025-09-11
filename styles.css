@@ -417,6 +417,17 @@ header {
     color: #333;
 }
 
+.teacher-info {
+    font-size: 1rem;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 8px 16px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 20px;
+    display: inline-block;
+}
+
 .class-description {
     font-size: 1.1rem;
     color: #666;
@@ -568,6 +579,31 @@ header {
 .summary-box p {
     margin-bottom: 0;
     font-style: italic;
+}
+
+/* Study Images */
+.image-container {
+    margin: 2rem 0;
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.study-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.image-caption {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0;
 }
 
 /* Footer */
