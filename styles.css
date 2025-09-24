@@ -272,10 +272,45 @@ header {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    position: relative;
     color: white;
     padding: 80px 0;
     text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    z-index: 1;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
 }
 
 .hero h1 {
@@ -577,8 +612,7 @@ header {
 
 /* Aerospace Background */
 .aerospace-background {
-    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
-                url('https://upload.wikimedia.org/wikipedia/commons/4/47/Contrail.fourengined.arp.jpg');
+    background: url('https://upload.wikimedia.org/wikipedia/commons/4/47/Contrail.fourengined.arp.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -993,6 +1027,11 @@ footer {
         font-size: 2rem;
     }
     
+    .hero-content {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
     .feature-grid {
         grid-template-columns: 1fr;
     }
@@ -1101,8 +1140,12 @@ footer {
     background: linear-gradient(135deg, #2d3748, #4a5568);
 }
 
-.dark-mode .hero {
+.dark-mode .hero::before {
     background: linear-gradient(135deg, #2d3748, #4a5568);
+}
+
+.dark-mode .hero-content {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .dark-mode .hero h1,
@@ -1252,7 +1295,7 @@ footer {
 
 /* Dark mode aerospace background */
 .dark-mode .aerospace-background {
-    background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
                 url('https://upload.wikimedia.org/wikipedia/commons/4/47/Contrail.fourengined.arp.jpg');
     background-size: cover;
     background-position: center;
