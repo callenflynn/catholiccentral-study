@@ -575,6 +575,15 @@ header {
     min-height: 70vh;
 }
 
+/* Aerospace Background */
+.aerospace-background {
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                url('https://upload.wikimedia.org/wikipedia/commons/4/47/Contrail.fourengined.arp.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 .breadcrumb {
     margin-bottom: 2rem;
     font-size: 0.9rem;
@@ -1239,6 +1248,15 @@ footer {
 .dark-mode .chapter-detail,
 .dark-mode .class-detail {
     background-color: var(--bg-color);
+}
+
+/* Dark mode aerospace background */
+.dark-mode .aerospace-background {
+    background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), 
+                url('https://upload.wikimedia.org/wikipedia/commons/4/47/Contrail.fourengined.arp.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* Floating Audio Player */
