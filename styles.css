@@ -944,6 +944,47 @@ footer {
     margin-top: 0.5rem;
 }
 
+/* Ad Section Styles */
+#ad-note, .ad-note {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #444;
+    margin: 24px 0 8px 0;
+    background: none;
+}
+
+#ad-frame, #frame {
+    width: 100%;
+    margin: 0 auto 24px auto;
+    position: relative;
+    z-index: 99998;
+    display: block;
+    min-height: 80px;
+}
+
+#ad-frame iframe, #frame iframe {
+    border: 0;
+    padding: 0;
+    width: 70%;
+    min-height: 80px;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+    background: #004f92;
+    border-radius: 4px;
+}
+
+#ad-frame-link, #frame-link {
+    display: inline-block;
+    font-size: 13px;
+    color: #263238;
+    padding: 4px 10px;
+    background: #F8F8F9;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    margin-top: 2px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
