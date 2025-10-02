@@ -1,3 +1,43 @@
+/* Petition Banner */
+.petition-banner {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    color: white;
+    padding: 12px 0;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1000;
+}
+
+.petition-banner a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.petition-banner a:hover {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+.petition-banner .close-banner {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.petition-banner .close-banner:hover {
+    color: #ffeb3b;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
