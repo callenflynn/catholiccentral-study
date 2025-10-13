@@ -1,0 +1,39 @@
+User-agent: *
+Allow: /
+
+# Allow all main content
+Allow: /index.html
+Allow: /classes.html
+
+# Allow all class directories
+Allow: /ajof/
+Allow: /biology/
+Allow: /freshman-english/
+Allow: /freshman-revelations/
+
+# Allow all study content
+Allow: /ajof/ch*/
+Allow: /biology/ch*/
+Allow: /freshman-revelations/*.html
+
+# Allow assets
+Allow: /assets/
+
+# Disallow redirect files (they automatically redirect anyway)
+Disallow: /aerospace-chapter-*.html
+Disallow: /aerospace-journey-of-flight.html
+Disallow: /biology.html
+Disallow: /biology-chapter-*.html
+Disallow: /freshman-english.html
+Disallow: /freshman-revelations.html
+Disallow: /freshman-revelations-*.html
+Disallow: /smith-english.html
+
+# Standard exclusions
+Disallow: /404.html
+Disallow: /*.git
+Disallow: /*.md
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://dcc-study.vercel.app/sitemap.xml
