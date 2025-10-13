@@ -60,9 +60,14 @@
                     Comprehensive study of three-dimensional aircraft movement, aircraft components, engines, flight controls, and instrumentation systems.
                 </p>
 
-                <div class="keyword-search">
-                    <input type="text" id="keywordInput" placeholder="Search for keywords in this chapter...">
-                    <span class="search-info" id="searchInfo"></span>
+                <!-- Keyword Search -->
+                <div class="keyword-search-container">
+                    <input type="text" id="keywordSearch" placeholder="Search for keywords in this chapter...">
+                    <div id="searchInfo" class="search-info"></div>
+                </div>
+                
+                <div id="noResults" class="no-results" style="display: none;">
+                    <p>No results found. Try different keywords or check your spelling.</p>
                 </div>
 
                 <div class="summary-box" style="margin-bottom: 2rem;">
