@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerospace Chapter 9 - DCC Study Tools</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../crest.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="../../index.html" class="nav-brand">
+                    <img src="../../crest.png" alt="DCC Crest" class="nav-logo">
+                    <h1>DCC Study Tools</h1>
+                </a>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../classes.html">Classes</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            More Resources
+                            <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="tooltip-container">
+                                <a href="https://callenflynn.github.io/article-finder" target="_blank">Article Finder</a>
+                                <div class="tooltip">Search multiple academic databases for research articles and papers on any topic</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/callenflynn/catholiccentral-study" target="_blank">GitHub</a></li>
+                    <li>
+                        <div class="dark-mode-toggle" id="darkModeToggle">
+                            <span class="toggle-icon">🌙</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chapter-detail">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../classes.html">Classes</a> > <a href="../">Aerospace Journey of Flight</a> > <span>Chapter 9</span>
+                </div>
+                
+                <h1>Chapter 9 - Aviation Navigation</h1>
+                <p class="chapter-description">
+                    Navigation is knowing where you are, where you're going, and how to get there. Aviation navigation requires maps, direction-indicating instruments, and careful planning since pilots cannot stop to ask for directions.
+                </p>
+
+                <div class="pdf-link-section">
+                    <h3>📖 Chapter Resources</h3>
+                    <p><a href="../../assets/pdfs/ajof-chapter-9.pdf" target="_blank" class="btn btn-primary">View Chapter 9 PDF</a></p>
+                </div>
+
+                <div class="content-section">
+                    <h2>Introduction to Navigation</h2>
+                    <p>Navigation is knowing where you are, where you're going, and how to get there. Aviation navigation requires maps, direction-indicating instruments, and careful planning since pilots cannot stop to ask for directions. This chapter covers basic navigation principles that all pilots must learn and practice.</p>
+
+                    <h2>Maps and Map Projections</h2>
+                    
+                    <h3>Global Coordinate System</h3>
+                    <ul>
+                        <li><strong>Great circles</strong>: Circles passing through Earth's center</li>
+                        <li><strong>Small circles</strong>: All other circles</li>
+                        <li><strong>Graticule</strong>: Grid system with 18 primary north-south lines (longitude/meridians) and east-west lines (latitude/parallels) spaced 10 degrees apart</li>
+                        <li><strong>Prime meridian</strong>: 0° longitude through Greenwich, England; divides Eastern/Western hemispheres</li>
+                        <li><strong>Equator</strong>: 0° latitude; divides Northern/Southern hemispheres</li>
+                        <li><strong>Coordinates</strong>: Read latitude first (N/S), then longitude (E/W). Example: 36°N 84°W</li>
+                        <li><strong>Distance measurement</strong>: Each degree has 60 minutes; 1 minute = 1 nautical mile (6,076 feet)</li>
+                    </ul>
+
+                    <h3>Map Projections</h3>
+                    <p>Flattening Earth's sphere onto flat paper causes distortion:</p>
+                    <ul>
+                        <li><strong>Mercator</strong>: Best for small areas where Earth appears flat</li>
+                        <li><strong>Lambert-Conformal</strong>: Cone wrapped around globe; better for longer distances; great circles appear nearly straight; used for sectional charts</li>
+                    </ul>
+
+                    <h2>Sectional Aeronautical Charts</h2>
+                    <p>Most popular charts for small aircraft on short flights. Lambert-Conformal projections with symbols and colors representing terrain and features.</p>
+
+                    <h3>Relief (Elevation)</h3>
+                    <ul>
+                        <li><strong>Color tints</strong>: 1,000-foot increments (green = 0-1,000 ft, etc.); irregular borders show terrain roughness</li>
+                        <li><strong>Contour lines</strong>: Connect equal elevations; spacing shows slope steepness (wide = gradual, close = steep, together = cliff)</li>
+                        <li><strong>Highest points</strong>: Black dots with elevation numbers</li>
+                        <li><strong>Pictorial shading</strong>: Airbrush makes mountains look 3D</li>
+                    </ul>
+
+                    <h3>Hydrographic Features</h3>
+                    <p>Water shown in blue (lakes, streams). Valuable for navigation since each lake has unique, identifiable shape.</p>
+
+                    <h3>Cultural Features</h3>
+                    <ul>
+                        <li><strong>Large cities</strong>: Bright yellow with black border</li>
+                        <li><strong>Small communities</strong>: Small black circles</li>
+                        <li><strong>Infrastructure</strong>: Mines, highways (black/magenta lines), railroads (lines with crossties), power lines</li>
+                        <li><strong>Obstructions</strong>: Clearly marked with heights</li>
+                    </ul>
+
+                    <h3>Civil Airports</h3>
+                    <p>Symbols indicate runway type and facilities:</p>
+                    <ul>
+                        <li><strong>Unpaved</strong>: Magenta circle</li>
+                        <li><strong>With facilities</strong> (fuel, food, lodging): Four tick marks from circle</li>
+                        <li><strong>Private</strong>: "R" in circle; "(Pvt)" after name</li>
+                        <li><strong>Paved 1,500-8,000 ft</strong>: Magenta disk (no tower) or blue disk (tower)</li>
+                        <li><strong>Runways 8,000+ ft</strong>: Heavily outlined; magenta (no tower) or blue (tower)</li>
+                    </ul>
+
+                    <h2>Airspace and Airways</h2>
+                    
+                    <h3>Controlled Airspace</h3>
+                    <p>Subject to FAA air traffic control:</p>
+                    <ul>
+                        <li><strong>Continental control area</strong>: Starts at 14,500 ft MSL, extends upward, covers entire US</li>
+                        <li><strong>Control zones</strong>: Around airports, surface to continental control area</li>
+                        <li><strong>Airport traffic area</strong>: Within control zones with operating towers</li>
+                    </ul>
+
+                    <h3>Special-Use Airspace</h3>
+                    <ul>
+                        <li><strong>Prohibited</strong>: Must avoid</li>
+                        <li><strong>Restricted</strong>: Prohibited at certain times</li>
+                        <li><strong>Warning/Alert areas</strong>: Exercise extreme caution</li>
+                        <li><strong>MOA (Military Operations Area)</strong>: Military training; higher collision risk</li>
+                        <li><strong>MTR (Military Training Route)</strong>: Low-level training routes</li>
+                    </ul>
+
+                    <h2>Basic Navigation Principles</h2>
+                    
+                    <h3>True Course vs. Magnetic Course</h3>
+                    <ul>
+                        <li><strong>True course</strong>: Straight line drawn on chart; direction measured clockwise from longitude line</li>
+                        <li><strong>Magnetic course</strong>: Adjusted for magnetic variation using isogonic lines on charts</li>
+                        <li><strong>Compass deviation</strong>: Aircraft metals and electrical systems cause additional compass errors</li>
+                    </ul>
+
+                    <h3>True Airspeed vs. Ground Speed</h3>
+                    <ul>
+                        <li><strong>True airspeed</strong>: Speed through air mass; measured by aircraft instruments</li>
+                        <li><strong>Ground speed</strong>: Speed across Earth's surface; determines time to destination</li>
+                        <li><strong>Wind effects</strong>: Tailwind increases ground speed; headwind decreases it</li>
+                        <li><strong>Wind triangle</strong>: Tool to calculate drift correction and wind compensation</li>
+                    </ul>
+
+                    <h2>Navigation Techniques</h2>
+                    
+                    <h3>Pilotage</h3>
+                    <p>Navigating by visible landmarks:</p>
+                    <ul>
+                        <li>Draw true-course line on chart and measure distance</li>
+                        <li>Select landmarks as checkpoints (predetermined time/position points)</li>
+                        <li>Choose brackets (easy-to-see features on each side of course)</li>
+                        <li>Observe wind drift and compensate by changing heading</li>
+                    </ul>
+
+                    <h3>Dead Reckoning</h3>
+                    <p>Professional-level navigation with systematic consideration of all factors:</p>
+                    <ol>
+                        <li><strong>Draw TC line</strong>: Measure direction and distance</li>
+                        <li><strong>Estimate true airspeed</strong>: Account for altitude effects (2% increase per 1,000 ft)</li>
+                        <li><strong>Check weather</strong>: Wind direction and speed</li>
+                        <li><strong>Determine wind correction</strong>: Calculate heading adjustment and ground speed</li>
+                        <li><strong>Find magnetic heading</strong>: Apply magnetic variation from isogonic lines</li>
+                        <li><strong>Find compass heading</strong>: Apply compass deviation from aircraft card</li>
+                        <li><strong>Calculate time en route</strong>: Distance ÷ ground speed</li>
+                        <li><strong>Calculate fuel usage</strong>: Fuel flow × time</li>
+                        <li><strong>Select checkpoints</strong>: Identifiable features along route</li>
+                        <li><strong>File flight plan</strong>: With FAA for search and rescue if overdue</li>
+                    </ol>
+
+                    <h2>Electronic Aids</h2>
+                    
+                    <h3>VOR (Very-High-Frequency Omnidirectional Radio Range)</h3>
+                    <ul>
+                        <li>Broadcasts 360° circle of signals (radials)</li>
+                        <li>Course Deviation Indicator (CDI) shows position relative to selected radial</li>
+                        <li>Can obtain position fix with two VOR receivers</li>
+                        <li>Allows navigation without seeing ground</li>
+                    </ul>
+
+                    <h3>ADF (Automatic Direction Finder)</h3>
+                    <ul>
+                        <li>Needle points toward tuned Non-directional Beacon (NDB)</li>
+                        <li>Doesn't compensate for wind (may fly curved path)</li>
+                        <li>Signals can bounce off terrain giving incorrect information</li>
+                    </ul>
+
+                    <h3>DME (Distance-Measuring Equipment)</h3>
+                    <ul>
+                        <li>Works with VORTAC stations (VOR + TACAN)</li>
+                        <li>Measures line-of-sight distance to station</li>
+                        <li>Combined with VOR gives precise position (radial + distance)</li>
+                    </ul>
+
+                    <h3>LORAN (Long-Range Navigation)</h3>
+                    <ul>
+                        <li>Master and slave ground stations broadcast timed signals</li>
+                        <li>Aircraft receiver measures time differences in microseconds</li>
+                        <li>Special LORAN charts show time differences as curved lines</li>
+                        <li>Being replaced by GPS (less expensive, more accurate)</li>
+                    </ul>
+
+                    <h3>GPS (Global Positioning System)</h3>
+                    <ul>
+                        <li>~30 satellites orbiting Earth + ground tracking stations</li>
+                        <li>Needs signals from 4 satellites for: latitude, longitude, elevation, time</li>
+                        <li>Differential GPS provides very accurate positioning with ground correction stations</li>
+                        <li>Two signals: military and civilian use</li>
+                    </ul>
+
+                    <h3>INS (Inertial Navigation System)</h3>
+                    <ul>
+                        <li>Self-contained unit requiring only electrical power</li>
+                        <li>Three accelerometers detect movement in all directions</li>
+                        <li>Tracks position based on starting point and all movements</li>
+                        <li>Accuracy degrades ~½ nm per hour (drift)</li>
+                    </ul>
+
+                    <h3>RNAV (Area Navigation System)</h3>
+                    <ul>
+                        <li>Computer-controlled navigation using VOR stations or GPS</li>
+                        <li>Allows direct flight without following airways</li>
+                        <li>Useful for long great-circle courses (saves time and fuel)</li>
+                        <li>GPS-based RNAV backed up by INS or ground stations</li>
+                    </ul>
+
+                    <h2>Landing Navigation Systems</h2>
+                    <p>Highly accurate systems within limited range for precision approaches to runways.</p>
+
+                    <h3>ILS (Instrument Landing System)</h3>
+                    <ul>
+                        <li><strong>Ground components</strong>: Localizer (lateral guidance) and glide slope (vertical guidance)</li>
+                        <li><strong>Marker beacons</strong>: Outer (blue), middle (amber), inner (white) position checkpoints</li>
+                        <li><strong>Aircraft equipment</strong>: Receivers display localizer and glide-slope needles</li>
+                        <li><strong>Precision</strong>: Can guide aircraft to 50-foot wide runways in low visibility</li>
+                    </ul>
+
+                    <h3>MLS (Microwave Landing System)</h3>
+                    <ul>
+                        <li>Wide electronic funnel: 120° horizontal, 20° vertical spread</li>
+                        <li>Easy to enter from any angle within range</li>
+                        <li>Precision back-course guidance for go-around procedures</li>
+                        <li>Limited adoption; abandoned for land-based US applications</li>
+                    </ul>
+
+                    <h3>GPS Landing Systems</h3>
+                    <ul>
+                        <li>Approaches can include curved paths and tiered altitudes</li>
+                        <li>Computer-generated approaches shaped for environmental needs</li>
+                        <li>Differential GPS enables precision landing on moving platforms</li>
+                        <li>Can enable mid-air refueling rendezvous and UAV operations</li>
+                    </ul>
+                </div>
+
+                <div class="summary-box">
+                    <h4>Chapter 9 Key Takeaways</h4>
+                    <ul>
+                        <li><strong>Navigation Foundation</strong>: Understanding global coordinates, map projections, and chart symbols</li>
+                        <li><strong>Sectional Charts</strong>: Reading relief, hydrographic, cultural features, and airport symbols</li>
+                        <li><strong>Airspace Classification</strong>: Controlled vs. uncontrolled airspace, airways, and special-use areas</li>
+                        <li><strong>Course Calculations</strong>: True course, magnetic variation, compass deviation, and wind corrections</li>
+                        <li><strong>Pilotage Technique</strong>: Visual navigation using landmarks, checkpoints, and brackets</li>
+                        <li><strong>Dead Reckoning</strong>: Systematic 10-step process for professional flight planning</li>
+                        <li><strong>Electronic Navigation</strong>: VOR, ADF, DME, LORAN, GPS, INS, and RNAV systems</li>
+                        <li><strong>Precision Landing</strong>: ILS, MLS, and GPS approach systems for safe runway guidance</li>
+                        <li><strong>Backup Proficiency</strong>: Maintaining basic navigation skills despite electronic advances</li>
+                        <li><strong>Complete Process</strong>: From departure planning to precision landing approach systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>2025 DCC Study Tools</p>
+            <p><a href="https://github.com/callenflynn/" target="_blank" class="footer-link">More Projects</a> | <a href="https://forms.gle/VcRkuB8tfkLHttt98" target="_blank" class="footer-link">Report Error</a></p>
+            <p class="disclaimer">This site is NOT affiliated with Detroit Catholic Central and is not managed by DCC staff</p>
+        </div>
+    </footer>
+    
+    <script src="../../study-tools.js"></script>
+</body>
+</html>
