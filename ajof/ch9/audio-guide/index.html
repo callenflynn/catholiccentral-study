@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Navigation - Audio Study Guide - DCC Study Tools</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="icon" type="image/png" href="../../../crest.png">
+    <style>
+        .audio-container {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .transcript {
+            background: var(--section-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            line-height: 1.8;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .transcript h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .transcript h4 {
+            color: var(--text-color);
+            margin: 1.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .transcript p {
+            margin-bottom: 1rem;
+        }
+
+        .audio-status {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 1rem 0;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .dark-mode .audio-status {
+            background: #2d3748;
+            color: #a0aec0;
+        }
+
+        .audio-info {
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .speed-indicator {
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .skip-backward-btn, .skip-forward-btn {
+            background: #6f42c1;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+            color: white;
+        }
+
+        .skip-backward-btn:hover, .skip-forward-btn:hover {
+            background: #5a32a3;
+        }
+
+        .skip-backward-btn:disabled, .skip-forward-btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="https://dcc-study.vercel.app/" class="nav-brand">
+                    <img src="../../../crest.png" alt="DCC Crest" class="nav-logo">
+                    <h1>DCC Study Tools</h1>
+                </a>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../../classes.html">Classes</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            More Resources
+                            <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="tooltip-container">
+                                <a href="https://callenflynn.github.io/article-finder" target="_blank">Article Finder</a>
+                                <div class="tooltip">Search multiple academic databases for research articles and papers on any topic</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/callenflynn/catholiccentral-study" target="_blank">GitHub</a></li>
+                    <li>
+                        <div class="dark-mode-toggle" id="darkModeToggle">
+                            <span class="toggle-icon">🌙</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chapter-detail">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../../classes.html">Classes</a> > 
+                    <a href="../../">Aerospace Journey of Flight</a> > 
+                    <a href="../">Chapter 9</a> > 
+                    <span>Audio Study Guide</span>
+                </div>
+                
+                <h1>Aviation Navigation - Audio Study Guide</h1>
+                <p class="chapter-description">
+                    Listen to a comprehensive audio guide covering aviation navigation fundamentals, from map reading to electronic navigation systems.
+                </p>
+
+                <div class="audio-container">
+                    <div class="audio-info">
+                        <h3>🎧 Audio Study Guide</h3>
+                        <p>Complete coverage of Chapter 9 - Aviation Navigation</p>
+                        <div class="speed-indicator" id="speedIndicator">Speed: 1.0x</div>
+                    </div>
+
+                    <div class="audio-status" id="audioStatus">
+                    </div>
+                </div>
+
+                <div class="transcript">
+                    <h3>📝 Full Transcript</h3>
+                    
+                    <h4>Understanding Maps</h4>
+                    <p>The Earth has an invisible grid system called the graticule. Lines running north-south are longitude or meridians, and lines running east-west are latitude or parallels. The Prime Meridian at zero degrees longitude runs through Greenwich, England and divides the Eastern and Western hemispheres. The Equator at zero degrees latitude splits the Northern and Southern hemispheres.</p>
+                    
+                    <p>Here's something crucial to remember: one minute of latitude equals exactly one nautical mile, which is six thousand seventy-six feet. This makes distance calculations super easy on charts.</p>
+                    
+                    <p>For aviation, we use Lambert-Conformal projections on sectional charts. These work great for longer distances because great circles, the shortest routes between two points, appear almost straight.</p>
+
+                    <h4>Reading Sectional Charts</h4>
+                    <p>Relief shows terrain elevation using color tints in one thousand foot increments. Green means zero to one thousand feet. Contour lines connect equal elevations. When they're close together, you're looking at a steep slope. When they touch, that's a cliff.</p>
+                    
+                    <p>For airports, here's what you need to know: unpaved runways show up as magenta circles. Paved runways between fifteen hundred and eight thousand feet appear as magenta disks with no tower or blue disks if there's a tower. The color coding is simple: magenta means no tower, blue means there's a tower.</p>
+
+                    <h4>Airspace</h4>
+                    <p>Controlled airspace is subject to FAA air traffic control. The continental control area starts at fourteen thousand five hundred feet and extends upward. Special-use airspace requires attention: prohibited areas you must avoid completely, restricted areas are prohibited at certain times, and MOAs are Military Operations Areas where there's higher collision risk.</p>
+
+                    <h4>Navigation Math</h4>
+                    <p>When you draw a line on your chart, that's your true course measured from true north. But your compass points to magnetic north, which is in a different place, so you apply magnetic variation using isogonic lines. Then you account for compass deviation caused by your aircraft's metals and electrical systems. The order is: true course, magnetic course, then compass heading.</p>
+                    
+                    <p>True airspeed is your speed through the air. Ground speed is your speed across the Earth's surface, and that's what determines when you'll arrive. Tailwind increases ground speed, headwind decreases it.</p>
+
+                    <h4>Navigation Techniques</h4>
+                    <p>Pilotage means navigating by what you see. You draw your course, select checkpoints where you expect to be at certain times, and choose brackets, which are easy-to-see features on each side of your course.</p>
+                    
+                    <p>Dead reckoning is the professional technique. Here's the process: Draw your true course and measure distance. Estimate your true airspeed, remembering it increases about two percent per thousand feet of altitude. Check weather for wind. Determine wind correction angle and ground speed. Find magnetic heading using isogonic lines. Find compass heading using your compass card. Calculate time en route by dividing distance by ground speed. Calculate fuel usage. Select checkpoints. And always file a flight plan with the FAA.</p>
+
+                    <h4>Electronic Navigation</h4>
+                    <p>VOR, Very High Frequency Omnidirectional Radio Range, broadcasts a three hundred sixty degree circle of signals called radials. Your Course Deviation Indicator shows where you are relative to the radial you've selected. With two VOR receivers, you can get a position fix.</p>
+                    
+                    <p>ADF, the Automatic Direction Finder, has a needle that points toward the beacon you tune in. The limitation is it doesn't compensate for wind, so you might fly a curved path.</p>
+                    
+                    <p>DME, Distance Measuring Equipment, works with VORTAC stations and measures your line-of-sight distance. Combined with VOR, you get precise position: the radial tells direction, DME tells distance.</p>
+                    
+                    <p>GPS uses about thirty satellites. You need signals from four satellites to get latitude, longitude, elevation, and time. Differential GPS uses ground stations for very accurate positioning.</p>
+                    
+                    <p>INS, the Inertial Navigation System, is self-contained and only needs electrical power. It has three accelerometers that detect movement in all directions and tracks your position based on where you started. Accuracy degrades about half a nautical mile per hour.</p>
+                    
+                    <p>RNAV, Area Navigation System, is computer-controlled and uses VOR stations or GPS. The big advantage is flying direct routes without following airways, which saves time and fuel on long flights.</p>
+
+                    <h4>Landing Systems</h4>
+                    <p>ILS, the Instrument Landing System, has a localizer giving lateral guidance and a glide slope giving vertical guidance. Marker beacons show position: outer marker is blue, middle is amber, inner is white. This system is so precise it can guide you to a fifty-foot wide runway even in low visibility.</p>
+                    
+                    <p>GPS landing systems are the new frontier. Approaches can include curved paths and tiered altitudes. They're computer-generated and can be shaped for environmental needs. Differential GPS enables precision landing even on moving platforms.</p>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-audio-player" id="floatingAudioPlayer">
+        <div class="audio-player-content">
+            <div class="audio-info">
+                <span class="audio-icon">🎧</span>
+                <span class="audio-title">Aviation Navigation</span>
+            </div>
+            <div class="audio-controls">
+                <button class="skip-backward-btn" id="skipBackBtn" disabled title="Skip back 30 seconds">⏪</button>
+                <button class="play-pause-btn" id="playPauseBtn" disabled>▶️</button>
+                <button class="skip-forward-btn" id="skipForwardBtn" disabled title="Skip forward 30 seconds">⏩</button>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="time-display" id="timeDisplay">0:00 / 0:00</span>
+                </div>
+                <div class="speed-container">
+                    <span class="speed-label">Speed:</span>
+                    <select class="speed-selector" id="speedSelector" disabled>
+                        <option value="0.5">0.5x</option>
+                        <option value="0.75">0.75x</option>
+                        <option value="1" selected>1x</option>
+                        <option value="1.25">1.25x</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2">2x</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <audio id="chapterAudio" preload="metadata">
+            <source src="ajof-ch9.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>2025 DCC Study Tools</p>
+            <p><a href="https://github.com/callenflynn/" target="_blank" class="footer-link">More Projects</a> | <a href="https://forms.gle/VcRkuB8tfkLHttt98" target="_blank" class="footer-link">Report Error</a></p>
+            <p class="disclaimer">This site is NOT affiliated with Detroit Catholic Central and is not managed by DCC staff</p>
+        </div>
+    </footer>
+
+    <script src="../../../study-tools.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('chapterAudio');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const progressBar = document.getElementById('progressBar');
+            const progressFill = document.getElementById('progressFill');
+            const timeDisplay = document.getElementById('timeDisplay');
+            const speedSelector = document.getElementById('speedSelector');
+            const skipBackBtn = document.getElementById('skipBackBtn');
+            const skipForwardBtn = document.getElementById('skipForwardBtn');
+            
+            playPauseBtn.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseBtn.textContent = '⏸️';
+                } else {
+                    audio.pause();
+                    playPauseBtn.textContent = '▶️';
+                }
+            });
+            
+            // Skip functionality
+            skipBackBtn.addEventListener('click', function() {
+                audio.currentTime = Math.max(0, audio.currentTime - 30);
+            });
+            
+            skipForwardBtn.addEventListener('click', function() {
+                audio.currentTime = Math.min(audio.duration, audio.currentTime + 30);
+            });
+            
+            // Progress bar update
+            audio.addEventListener('timeupdate', function() {
+                if (audio.duration) {
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    progressFill.style.width = progress + '%';
+                    
+                    // Update time display
+                    const currentMinutes = Math.floor(audio.currentTime / 60);
+                    const currentSeconds = Math.floor(audio.currentTime % 60);
+                    const totalMinutes = Math.floor(audio.duration / 60);
+                    const totalSeconds = Math.floor(audio.duration % 60);
+                    
+                    timeDisplay.textContent = `${currentMinutes}:${currentSeconds.toString().padStart(2, '0')} / ${totalMinutes}:${totalSeconds.toString().padStart(2, '0')}`;
+                }
+            });
+            
+            // Progress bar click to seek
+            progressBar.addEventListener('click', function(e) {
+                if (audio.duration) {
+                    const rect = progressBar.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const barWidth = rect.width;
+                    const seekTime = (clickX / barWidth) * audio.duration;
+                    audio.currentTime = seekTime;
+                }
+            });
+            
+            // Speed control
+            speedSelector.addEventListener('change', function() {
+                audio.playbackRate = parseFloat(speedSelector.value);
+                // Update speed indicator in the page
+                const speedIndicator = document.getElementById('speedIndicator');
+                if (speedIndicator) {
+                    speedIndicator.textContent = `Speed: ${speedSelector.value}x`;
+                }
+            });
+            
+            // Reset play button when audio ends
+            audio.addEventListener('ended', function() {
+                playPauseBtn.textContent = '▶️';
+                progressFill.style.width = '0%';
+            });
+            
+            // Enable controls when audio loads
+            audio.addEventListener('loadedmetadata', function() {
+                playPauseBtn.disabled = false;
+                speedSelector.disabled = false;
+                skipBackBtn.disabled = false;
+                skipForwardBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
