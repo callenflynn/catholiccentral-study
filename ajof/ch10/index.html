@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerospace Chapter 10 - DCC Study Tools</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../crest.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="../../index.html" class="nav-brand">
+                    <img src="../../crest.png" alt="DCC Crest" class="nav-logo">
+                    <h1>DCC Study Tools</h1>
+                </a>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../classes.html">Classes</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            More Resources
+                            <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="tooltip-container">
+                                <a href="https://callenflynn.github.io/article-finder" target="_blank">Article Finder</a>
+                                <div class="tooltip">Search multiple academic databases for research articles and papers on any topic</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/callenflynn/catholiccentral-study" target="_blank">GitHub</a></li>
+                    <li>
+                        <div class="dark-mode-toggle" id="darkModeToggle">
+                            <span class="toggle-icon">🌙</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chapter-detail">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../classes.html">Classes</a> > <a href="../">Aerospace Journey of Flight</a> > <span>Chapter 10</span>
+                </div>
+                
+                <h1>Chapter 10 - The Airport Environment</h1>
+                <p class="chapter-description">
+                    Airports serve the fundamental purpose of launching and recovering aircraft. They vary greatly in size and function, from small grass fields to massive commercial facilities, but all share common essential components.
+                </p>
+
+                <div class="keyword-search-container">
+                    <input type="text" id="keywordSearch" placeholder="Search for keywords in this chapter...">
+                    <div id="searchInfo" class="search-info"></div>
+                </div>
+                
+                <div id="noResults" class="no-results" style="display: none;">
+                    <p>No results found. Try different keywords or check your spelling.</p>
+                </div>
+
+                <div class="pdf-link-section">
+                    <h3>📖 Chapter Resources</h3>
+                    <p><a href="../../assets/pdfs/ajof-chapter-10.pdf" target="_blank" class="btn btn-primary">View Chapter 10 PDF</a></p>
+                </div>
+
+                <div class="study-notes">
+                    <h2>Overview</h2>
+                    <p>Airports serve the fundamental purpose of launching and recovering aircraft. They vary greatly in size and function, from small grass fields to massive commercial facilities, but all share common essential components.</p>
+
+                    <h2>Main Airport Components</h2>
+                    
+                    <h3>Runways</h3>
+                    <p>The most critical part of any airport, runways are where aircraft take off and land.</p>
+                    
+                    <h4>Runway Numbering System:</h4>
+                    <ul>
+                        <li>Numbered using the first two digits of their compass direction (rounded to nearest 10 degrees)</li>
+                        <li>Example: A runway facing 265-274 degrees is numbered "27"</li>
+                        <li>Opposite direction uses the reciprocal heading (27 becomes 09, which is 180 degrees opposite)</li>
+                        <li>Parallel runways use letters: 23L (left) or 23R (right)</li>
+                    </ul>
+                    
+                    <h4>Runway Markings:</h4>
+                    <ul>
+                        <li>Dashed white centerline</li>
+                        <li>Solid white edge lines</li>
+                        <li>Large white blocks for bad weather operations</li>
+                    </ul>
+                    
+                    <h4>Runway Lighting:</h4>
+                    <ul>
+                        <li>Steady white lights along edges and sometimes center</li>
+                        <li>Red lights at the end</li>
+                        <li>Green lights at the beginning</li>
+                        <li>Approach lights before the runway help pilots align and find the runway</li>
+                        <li>Some smaller airports have pilot-controlled lighting (activated by radio)</li>
+                    </ul>
+
+                    <h3>Taxiways</h3>
+                    <p>The "roads" aircraft use to move around the airport.</p>
+                    <ul>
+                        <li>Named with letters (like Taxiway "C") instead of numbers</li>
+                        <li>Usually narrower than runways</li>
+                        <li>Yellow centerline (solid) instead of white</li>
+                        <li>Parallel taxiways run alongside runways</li>
+                    </ul>
+
+                    <h3>Ramp and Hangars</h3>
+                    
+                    <h4>Ramp:</h4>
+                    <ul>
+                        <li>Large paved parking area for aircraft</li>
+                        <li>Where loading and unloading occurs</li>
+                        <li>Dangerous area requiring constant awareness of moving aircraft and vehicles</li>
+                        <li>Light aircraft are tied down to prevent wind damage</li>
+                    </ul>
+                    
+                    <h4>Hangars:</h4>
+                    <ul>
+                        <li>Enclosed structures protecting aircraft from weather</li>
+                        <li>Similar to garages for airplanes</li>
+                        <li>Used for maintenance and storage</li>
+                    </ul>
+
+                    <h3>Control Tower</h3>
+                    <p>The tallest structure at the airport, providing visibility over all airport operations.</p>
+                    
+                    <h4>Functions:</h4>
+                    <ul>
+                        <li>Controls runway operations (authorizes takeoffs and landings)</li>
+                        <li>Manages ground movement of aircraft and vehicles</li>
+                        <li>Issues ATIS (Automated Terminal Information System) broadcasts</li>
+                        <li>Acts as traffic control to prevent collisions</li>
+                    </ul>
+                    
+                    <h4>ATIS (Automated Terminal Information System):</h4>
+                    <p>Voice recording updated hourly (or more frequently) containing:</p>
+                    <ul>
+                        <li>Wind conditions</li>
+                        <li>Cloud coverage</li>
+                        <li>Visibility</li>
+                        <li>Runway restrictions</li>
+                    </ul>
+
+                    <h3>Controlled vs. Uncontrolled Airports</h3>
+                    
+                    <h4>Controlled Airports:</h4>
+                    <ul>
+                        <li>Have operating control towers</li>
+                        <li>Tower manages all traffic</li>
+                        <li>Typically larger facilities with commercial operations</li>
+                    </ul>
+                    
+                    <h4>Uncontrolled Airports:</h4>
+                    <ul>
+                        <li>No control tower (more common)</li>
+                        <li>Pilots use standard procedures to avoid collisions</li>
+                        <li>Usually smaller facilities</li>
+                        <li>Some airports with towers become uncontrolled when the tower closes for the day</li>
+                    </ul>
+
+                    <h3>Fixed-Base Operation (FBO)</h3>
+                    <p>The "service station" for aircraft at smaller airports.</p>
+                    
+                    <h4>Services typically include:</h4>
+                    <ul>
+                        <li>Pilot training and instruction</li>
+                        <li>Fuel</li>
+                        <li>Aircraft maintenance</li>
+                        <li>Aircraft rental and sales</li>
+                        <li>Charter flights</li>
+                    </ul>
+
+                    <h3>Passenger Terminal</h3>
+                    <p>Found at larger airports, handling passengers, baggage, and cargo.</p>
+                    
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Waiting areas</li>
+                        <li>Food services and ticket counters</li>
+                        <li>Jetways (enclosed walkways to aircraft)</li>
+                        <li>Gates where passengers board</li>
+                        <li>Baggage claim and transfer areas</li>
+                    </ul>
+
+                    <h3>Other Airport Facilities</h3>
+                    <ul>
+                        <li><strong>National Weather Service:</strong> Provides weather data to Flight Service Stations</li>
+                        <li><strong>Flight Service Station (FSS):</strong> Offers weather forecasts, flight planning assistance, and special requests</li>
+                        <li><strong>Fire Stations:</strong> Emergency response for accidents</li>
+                        <li><strong>Rotating Beacon:</strong> Navigation aid visible at night
+                            <ul>
+                                <li>Civilian: alternating green and white lights</li>
+                                <li>Military: green light followed by two quick white flashes</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h2>Major Airport Challenges</h2>
+                    
+                    <h3>Wildlife Hazards</h3>
+                    <p>Birds and larger animals wandering onto runways pose serious accident risks. Solutions include:</p>
+                    <ul>
+                        <li>Cattle grates and fencing</li>
+                        <li>Tranquilizing and relocating animals</li>
+                        <li>Sometimes eliminating the threat</li>
+                    </ul>
+
+                    <h3>Noise Pollution</h3>
+                    <p>Aircraft operations create significant noise near ground level.</p>
+                    
+                    <h4>Noise Abatement Procedures:</h4>
+                    <ul>
+                        <li>Quick climbs after takeoff</li>
+                        <li>Avoiding flight over certain ground areas</li>
+                        <li>Community planning to prevent building near airports (reducing encroachment)</li>
+                    </ul>
+
+                    <h3>Future Developments</h3>
+                    <p>Tiltrotor aircraft may revolutionize aviation by combining:</p>
+                    <ul>
+                        <li>Vertical takeoff and landing (no runway needed)</li>
+                        <li>High-speed flight capabilities</li>
+                        <li>Potential for city-center to city-center travel</li>
+                        <li>Could reduce need for traditional airports for short-distance flights</li>
+                    </ul>
+
+                    <h2>Key Terms to Remember</h2>
+                    <ul>
+                        <li><strong>Threshold:</strong> Beginning of the runway</li>
+                        <li><strong>Encroachment:</strong> Building development too close to airports</li>
+                        <li><strong>Flight Plan:</strong> Description of an aircraft's planned route</li>
+                        <li><strong>Gate:</strong> Designated boarding area in passenger terminals</li>
+                        <li><strong>Noise Abatement:</strong> Procedures to reduce aircraft noise impact</li>
+                    </ul>
+
+                    <h2>Study Tips</h2>
+                    <ul>
+                        <li>Practice runway number calculations using compass headings</li>
+                        <li>Understand the difference between controlled and uncontrolled airports</li>
+                        <li>Know the color coding for different airport lights</li>
+                        <li>Be able to identify the main functions of each airport component</li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DCC Study Tools. All rights reserved.</p>
+    </footer>
+
+    <script src="../../study-tools.js"></script>
+</body>
+</html>

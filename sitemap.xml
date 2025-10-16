@@ -76,6 +76,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://dcc-study.vercel.app/ajof/ch10/</loc>
+        <lastmod>2025-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
     
     <url>
         <loc>https://dcc-study.vercel.app/biology/ch6/</loc>
@@ -187,6 +193,12 @@
     <url>
         <loc>https://dcc-study.vercel.app/assets/pdfs/ajof-chapter-9.pdf</loc>
         <lastmod>2025-01-13</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dcc-study.vercel.app/assets/pdfs/ajof-chapter-10.pdf</loc>
+        <lastmod>2025-10-16</lastmod>
         <changefreq>never</changefreq>
         <priority>0.5</priority>
     </url>
