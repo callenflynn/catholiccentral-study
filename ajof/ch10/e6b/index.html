@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E6B Flight Computer - AJOF Chapter 10</title>
+    <link rel="stylesheet" href="https://dcc-study.vercel.app/styles.css">
+    <link rel="icon" type="image/png" href="https://dcc-study.vercel.app/crest.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="https://dcc-study.vercel.app/index.html" class="nav-brand">
+                    <img src="https://dcc-study.vercel.app/crest.png" alt="DCC Crest" class="nav-logo">
+                    <h1>DCC Study Tools</h1>
+                </a>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="https://dcc-study.vercel.app/index.html">Home</a></li>
+                    <li><a href="https://dcc-study.vercel.app/classes.html">Classes</a></li>
+                    <li><a href="https://dcc-study.vercel.app/ajof/index.html">AJOF</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="chapter-detail">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="https://dcc-study.vercel.app/ajof/index.html">AJOF</a> > <a href="https://dcc-study.vercel.app/ajof/ch10/">Chapter 10</a> > <span>E6B Calculator</span>
+                </div>
+                <h1>E6B Flight Computer</h1>
+
+                <div class="iframe-container" style="position: relative; margin-bottom: 20px;">
+                    <button id="fullscreenBtn" style="position: absolute; top: 10px; right: 10px; z-index: 10; background: #007bff; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 14px;">⛶ Fullscreen</button>
+                    <iframe id="e6b-iframe" src="https://e6bx.com/e6b" width="100%" height="600" style="border:1px solid #ccc; border-radius:8px;" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 DCC Study Tools. All rights reserved.</p>
+    </footer>
+    <script src="https://dcc-study.vercel.app/study-tools.js"></script>
+    <script>
+        document.getElementById('fullscreenBtn').addEventListener('click', function() {
+            const iframe = document.getElementById('e6b-iframe');
+            const container = document.querySelector('.iframe-container');
+            
+            if (!document.fullscreenElement) {
+                // Enter fullscreen
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) { // Safari
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) { // IE11
+                    container.msRequestFullscreen();
+                }
+                this.textContent = '⛶ Exit Fullscreen';
+            } else {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { // Safari
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE11
+                    document.msExitFullscreen();
+                }
+                this.textContent = '⛶ Fullscreen';
+            }
+        });
+
+        // Update button text when fullscreen changes
+        document.addEventListener('fullscreenchange', function() {
+            const btn = document.getElementById('fullscreenBtn');
+            if (!document.fullscreenElement) {
+                btn.textContent = '⛶ Fullscreen';
+            } else {
+                btn.textContent = '⛶ Exit Fullscreen';
+            }
+        });
+
+        // Handle Safari fullscreen changes
+        document.addEventListener('webkitfullscreenchange', function() {
+            const btn = document.getElementById('fullscreenBtn');
+            if (!document.webkitFullscreenElement) {
+                btn.textContent = '⛶ Fullscreen';
+            } else {
+                btn.textContent = '⛶ Exit Fullscreen';
+            }
+        });
+    </script>
+</body>
+</html>
