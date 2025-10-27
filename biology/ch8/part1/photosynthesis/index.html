@@ -45,5 +45,49 @@
         <p>&copy; 2025 DCC Study Tools. All rights reserved.</p>
     </footer>
     <script src="/study-tools.js"></script>
+    <script>
+        document.getElementById('fullscreenBtn').addEventListener('click', function() {
+            const iframe = document.getElementById('photosynthesis-iframe');
+            const container = document.querySelector('.iframe-container');
+            
+            if (!document.fullscreenElement) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) { // Safari
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) { // IE11
+                    container.msRequestFullscreen();
+                }
+                this.textContent = '⛶ Exit Fullscreen';
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { // Safari
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE11
+                    document.msExitFullscreen();
+                }
+                this.textContent = '⛶ Fullscreen';
+            }
+        });
+
+        document.addEventListener('fullscreenchange', function() {
+            const btn = document.getElementById('fullscreenBtn');
+            if (!document.fullscreenElement) {
+                btn.textContent = '⛶ Fullscreen';
+            } else {
+                btn.textContent = '⛶ Exit Fullscreen';
+            }
+        });
+
+        document.addEventListener('webkitfullscreenchange', function() {
+            const btn = document.getElementById('fullscreenBtn');
+            if (!document.webkitFullscreenElement) {
+                btn.textContent = '⛶ Fullscreen';
+            } else {
+                btn.textContent = '⛶ Exit Fullscreen';
+            }
+        });
+    </script>
 </body>
 </html>
