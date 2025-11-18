@@ -83,6 +83,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://dcc-study.vercel.app/ajof/ch11/</loc>
+        <lastmod>2025-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://dcc-study.vercel.app/ajof/ch10/e6b/</loc>
         <lastmod>2025-10-26</lastmod>
         <changefreq>monthly</changefreq>
@@ -205,6 +211,12 @@
     <url>
         <loc>https://dcc-study.vercel.app/assets/pdfs/ajof-chapter-10.pdf</loc>
         <lastmod>2025-10-16</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dcc-study.vercel.app/assets/pdfs/ajof-chapter-11.pdf</loc>
+        <lastmod>2025-11-18</lastmod>
         <changefreq>never</changefreq>
         <priority>0.5</priority>
     </url>
