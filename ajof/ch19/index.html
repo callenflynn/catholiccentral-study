@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerospace Chapter 19 - DCC Study Tools</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../crest.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="../../index.html" class="nav-brand">
+                    <img src="../../crest.png" alt="DCC Crest" class="nav-logo">
+                    <h1>DCC Study Tools</h1>
+                </a>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../classes.html">Classes</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            More Resources
+                            <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="tooltip-container">
+                                <a href="https://callenflynn.github.io/article-finder" target="_blank">Article Finder</a>
+                                <div class="tooltip">Search multiple academic databases for research articles and papers on any topic</div>
+                            </li>
+                            <li class="tooltip-container">
+                                <a href="https://www.grammar-monster.com" target="_blank">Grammar Monster</a>
+                                <div class="tooltip">Study guides and quizzes for English grammar, punctuation, and writing</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/callenflynn/catholiccentral-study" target="_blank">GitHub</a></li>
+                    <li>
+                        <div class="dark-mode-toggle" id="darkModeToggle">
+                            <span class="toggle-icon">🌙</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chapter-detail">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../classes.html">Classes</a> > <a href="../">Aerospace Journey of Flight</a> > <span>Chapter 19</span>
+                </div>
+                
+                <h1>Chapter 19 - Air Carriers and Aircraft</h1>
+                <p class="chapter-description">
+                    An overview of commercial airlines and their aircraft operations, including major carrier types, aircraft categories, and industry structure.
+                </p>
+
+                <div class="keyword-search-container">
+                    <input type="text" id="keywordSearch" placeholder="Search for keywords in this chapter...">
+                    <div id="searchInfo" class="search-info"></div>
+                </div>
+                
+                <div id="noResults" class="no-results" style="display: none;">
+                    <p>No results found. Try different keywords or check your spelling.</p>
+                </div>
+
+                <div class="pdf-link-section">
+                    <h3>📖 Chapter Resources</h3>
+                    <p><a href="../../assets/pdfs/ajof-chapter-19.pdf" target="_blank" class="btn btn-primary">View Chapter 19 PDF</a></p>
+                    <p><button id="pptToggleBtn" class="btn btn-secondary">📊 View PowerPoint Presentation</button></p>
+                </div>
+
+                <div id="pptViewer" style="display: none; margin-top: 20px;">
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe id="pptFrame" 
+                                src="https://view.officeapps.live.com/op/embed.aspx?src=https://raw.githubusercontent.com/callenflynn/catholiccentral-study/main/assets/pdfs/ajof-chapter-19.pptx" 
+                                frameborder="0" 
+                                allowfullscreen 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 4px;">
+                        </iframe>
+                    </div>
+                    <p style="margin-top: 10px; font-size: 12px; color: #888;">
+                        <a href="../../assets/pdfs/ajof-chapter-19.pptx" download target="_blank">Download PowerPoint</a> if the viewer doesn't load
+                    </p>
+                </div>
+
+                <div class="study-notes">
+                    <h2>Overview of Air Carriers</h2>
+                    <p>Air carriers are commercial airlines that transport passengers and cargo on regular schedules. They operate in different market segments based on aircraft size, routes, and business models.</p>
+
+                    <h2>Three Main Categories of Air Carriers</h2>
+                    
+                    <h3>1. Large Air Carriers</h3>
+                    <ul>
+                        <li>Operate major passenger jets with 100-500+ seat capacity</li>
+                        <li>Serve routes between large metropolitan areas</li>
+                        <li>Focus on maximizing load factor (percentage of seats filled)</li>
+                        <li>Common aircraft: Boeing 747, 777, 767, 737, and Airbus A300 series</li>
+                        <li>Examples include major carriers like American, United, Delta, Southwest</li>
+                    </ul>
+
+                    <h3>2. Cargo Carriers</h3>
+                    <ul>
+                        <li>Transport freight as primary business</li>
+                        <li>Carry livestock, machinery, containerized cargo, and mail</li>
+                        <li>Use specialized modified aircraft like Boeing 747F (freighter version)</li>
+                        <li>Compete on speed for medium to long distances where time-sensitive delivery matters</li>
+                        <li>Examples: FedEx, UPS, DHL Air</li>
+                        <li>Capacity: Boeing 747F can carry approximately 200,000 pounds over long distances</li>
+                    </ul>
+
+                    <h3>3. Regional and Commuter Carriers</h3>
+                    <ul>
+                        <li>Serve smaller cities with limited passenger demand</li>
+                        <li>Operate aircraft with 15-50 passenger capacity</li>
+                        <li>Use turboprop or piston-engine aircraft for efficiency on short routes</li>
+                        <li>Common aircraft: Metroliner, Twin Otter, Dash 7, Beechcraft 1900</li>
+                        <li>Often affiliate with major carriers to feed passengers to hub airports</li>
+                        <li>Economic advantage on routes requiring fewer than 30 passengers</li>
+                    </ul>
+
+                    <h2>Key Historical Context: Airline Deregulation Act of 1978</h2>
+                    
+                    <h3>Before Deregulation</h3>
+                    <ul>
+                        <li>Civil Aeronautics Board (CAB) controlled all airline fares and routes</li>
+                        <li>Airlines needed government approval to change prices or add routes</li>
+                        <li>Limited competition led to high fares</li>
+                        <li>Service was guaranteed to small communities</li>
+                    </ul>
+
+                    <h3>After Deregulation (1978 Onward)</h3>
+                    <ul>
+                        <li>Airlines gained freedom to set own fares and choose routes</li>
+                        <li>Increased competition led to lower fares on popular routes</li>
+                        <li>New airlines entered the market (e.g., People Express, Southwest expansion)</li>
+                        <li>Unprofitable small-city routes were abandoned</li>
+                        <li>Industry growth: from 36 scheduled airlines (1978) to 76 airlines (1988)</li>
+                    </ul>
+
+                    <h3>Challenges for Established Airlines</h3>
+                    <ul>
+                        <li><strong>Higher labor costs:</strong> Union employees at legacy carriers versus non-union at new carriers</li>
+                        <li><strong>Fuel price increases:</strong> Operating costs tripled due to energy crisis</li>
+                        <li><strong>Interest rates:</strong> 15-20% rates on aircraft loans during late 1970s-early 1980s inflation</li>
+                        <li><strong>Fleet modernization:</strong> Expensive new aircraft purchases to compete</li>
+                        <li><strong>Economic recession:</strong> Reduced passenger demand in early 1980s</li>
+                        <li><strong>Air traffic controller strike (1981):</strong> Severely limited flights nationwide</li>
+                    </ul>
+
+                    <h2>Major Aircraft Manufacturers</h2>
+                    
+                    <h3>United States</h3>
+                    <ul>
+                        <li><strong>Boeing:</strong> 737, 747, 757, 767, 777, 787 Dreamliner - dominant manufacturer of large jets</li>
+                        <li><strong>McDonnell-Douglas (now Boeing):</strong> DC-10, MD-11, DC-9, MD-80/MD-90 series</li>
+                    </ul>
+
+                    <h3>International Manufacturers</h3>
+                    <ul>
+                        <li><strong>Airbus (European consortium):</strong> A300, A310, A320, A330, A340, A350, A380</li>
+                        <li><strong>Lockheed:</strong> L-1011 Tristar (no longer in production; last built 1984)</li>
+                        <li><strong>Bombardier:</strong> Regional jets (CRJ, CS) - significant turboprop and regional competitors</li>
+                    </ul>
+
+                    <h2>Airline Network Systems</h2>
+                    
+                    <h3>Point-to-Point Network</h3>
+                    <p>Direct flights with multiple intermediate stops connecting cities on individual routes.</p>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Lower passenger travel time with fewer connections</li>
+                        <li>Simpler air traffic control and coordination</li>
+                        <li>More direct routing for passengers</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Requires sufficient passenger demand to fill aircraft</li>
+                        <li>Aircraft and crew maintenance facilities needed in multiple cities</li>
+                        <li>Less efficient aircraft utilization</li>
+                        <li>Higher operating costs per passenger on low-demand routes</li>
+                    </ul>
+
+                    <h3>Hub-and-Spoke Network</h3>
+                    <p>Centralized hub airports with flights radiating outward like spokes on a wheel. Enabled by long-range jet aircraft and expanded significantly after 1978 deregulation.</p>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Greater flexibility in route planning and frequency</li>
+                        <li>Economies of scale - consolidate maintenance and operations at hub</li>
+                        <li>Can serve smaller communities through connecting flights</li>
+                        <li>More destination options for passengers from any spoke city</li>
+                        <li>Better aircraft utilization and crew scheduling</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Weather disruptions at hub can cascade throughout entire network</li>
+                        <li>Complex air traffic control patterns requiring sophisticated management</li>
+                        <li>Substantial infrastructure investment required at hub location</li>
+                        <li>Passengers may face longer travel times due to connections</li>
+                        <li>Connecting passengers vulnerable to missed connections</li>
+                    </ul>
+
+                    <h3>Historic Examples</h3>
+                    <ul>
+                        <li><strong>Chicago O'Hare:</strong> Developed as major hub in 1960s-1970s</li>
+                        <li><strong>Atlanta Hartsfield:</strong> Became dominant hub for Delta Air Lines</li>
+                        <li><strong>Dallas-Fort Worth:</strong> Served as American Airlines hub</li>
+                        <li><strong>Denver International:</strong> Built as United Airlines hub in 1995</li>
+                    </ul>
+
+                    <h2>Industry Statistics and Facts</h2>
+                    <ul>
+                        <li><strong>Passenger demographics:</strong> 70% of jet passengers travel on flights under 2 hours duration</li>
+                        <li><strong>Large aircraft capacity:</strong> Boeing 747-8 is 250 feet long with maximum capacity of 500+ passengers</li>
+                        <li><strong>Regional aircraft:</strong> Typically operate from runways as short as 2,000-3,000 feet</li>
+                        <li><strong>Cargo competitiveness:</strong> Air freight has advantage for distances exceeding 500 miles where speed matters</li>
+                        <li><strong>Load factor:</strong> Airlines target 80-85% load factor to be profitable</li>
+                    </ul>
+
+                    <h2>Summary</h2>
+                    <p>The air carrier industry comprises three distinct segments serving different market needs: large carriers for high-capacity intercity routes, cargo specialists for time-sensitive freight, and regional carriers connecting smaller communities. The 1978 deregulation fundamentally transformed the industry structure, enabling the hub-and-spoke system that dominates modern commercial aviation today.</p>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>2025 DCC Study Tools</p>
+            <p><a href="https://github.com/callenflynn/" target="_blank" class="footer-link">More Projects</a> | <a href="https://forms.gle/VcRkuB8tfkLHttt98" target="_blank" class="footer-link">Report Error</a></p>
+            <p class="disclaimer">This site is NOT affiliated with Detroit Catholic Central and is not managed by DCC staff</p>
+        </div>
+    </footer>
+    
+    <script src="../../study-tools.js"></script>
+    <script>
+        // PowerPoint toggle functionality
+        document.getElementById('pptToggleBtn').addEventListener('click', function() {
+            const viewer = document.getElementById('pptViewer');
+            const btn = document.getElementById('pptToggleBtn');
+            
+            if (viewer.style.display === 'none') {
+                viewer.style.display = 'block';
+                btn.textContent = '📊 Hide PowerPoint Presentation';
+            } else {
+                viewer.style.display = 'none';
+                btn.textContent = '📊 View PowerPoint Presentation';
+            }
+        });
+    </script>
+</body>
+</html>
