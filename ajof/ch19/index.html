@@ -73,22 +73,8 @@
 
                 <div class="pdf-link-section">
                     <h3>📖 Chapter Resources</h3>
-                    <p><a href="../../assets/pdfs/ajof-chapter-19.pdf" target="_blank" class="btn btn-primary">View Chapter 19 PDF</a></p>
-                    <p><button id="pptToggleBtn" class="btn btn-secondary">📊 View PowerPoint Presentation</button></p>
-                </div>
-
-                <div id="pptViewer" style="display: none; margin-top: 20px;">
-                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe id="pptFrame" 
-                                src="https://view.officeapps.live.com/op/embed.aspx?src=https://raw.githubusercontent.com/callenflynn/catholiccentral-study/main/assets/pdfs/ajof-chapter-19.ppt" 
-                                frameborder="0" 
-                                allowfullscreen 
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 4px;">
-                        </iframe>
-                    </div>
-                    <p style="margin-top: 10px; font-size: 12px; color: #888;">
-                        <a href="../../assets/pdfs/ajof-chapter-19.ppt" download target="_blank">Download PowerPoint</a> if the viewer doesn't load
-                    </p>
+                    <p><a href="../../assets/pdfs/ajof-ch19.pdf" target="_blank" class="btn btn-primary">View Chapter 19 PDF</a></p>
+                    <p><a href="../../assets/pdfs/ajof-chapter-19.ppt" download class="btn btn-secondary">⬇️ Download PowerPoint Presentation</a></p>
                 </div>
 
                 <div class="study-notes">
@@ -241,20 +227,5 @@
     </footer>
     
     <script src="../../study-tools.js"></script>
-    <script>
-        // PowerPoint toggle functionality
-        document.getElementById('pptToggleBtn').addEventListener('click', function() {
-            const viewer = document.getElementById('pptViewer');
-            const btn = document.getElementById('pptToggleBtn');
-            
-            if (viewer.style.display === 'none') {
-                viewer.style.display = 'block';
-                btn.textContent = '📊 Hide PowerPoint Presentation';
-            } else {
-                viewer.style.display = 'none';
-                btn.textContent = '📊 View PowerPoint Presentation';
-            }
-        });
-    </script>
 </body>
 </html>
