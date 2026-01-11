@@ -169,4 +169,148 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleIcon.textContent = icon;
         }
     }
+
+    // Ask AI Widget
+    initializeAskAIWidget();
+
+    function initializeAskAIWidget() {
+        // Avoid duplicate widgets
+        if (document.getElementById('askAiWidget')) return;
+
+        const widget = document.createElement('div');
+        widget.id = 'askAiWidget';
+        widget.className = 'ask-ai-widget';
+
+        widget.innerHTML = `
+            <button class="ask-ai-toggle" aria-label="Ask AI">Ask AI</button>
+            <div class="ask-ai-panel">
+                <div class="ask-ai-header">
+                    <span>Ask AI about this page</span>
+                    <button class="ask-ai-close" aria-label="Close">×</button>
+                </div>
+                <div class="ask-ai-body">
+                    <div class="ask-ai-subject-row" id="askAiSubjectRow" style="display:none; margin-bottom:8px;">
+                        <label for="askAiSubject" style="display:block; font-size:0.9rem; color:#666; margin-bottom:4px;">Subject</label>
+                        <select id="askAiSubject" class="ask-ai-input">
+                            <option value="christology">Christology</option>
+                            <option value="biology">Biology</option>
+                            <option value="history">History</option>
+                        </select>
+                    </div>
+                    <input type="text" id="aiQuestion" class="ask-ai-input" placeholder="Type your question..." />
+                    <button id="askAiSubmit" class="btn btn-primary ask-ai-submit">Ask</button>
+                    <div id="aiAnswer" class="ask-ai-answer" aria-live="polite"></div>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(widget);
+
+        const toggleBtn = widget.querySelector('.ask-ai-toggle');
+        const closeBtn = widget.querySelector('.ask-ai-close');
+        const panel = widget.querySelector('.ask-ai-panel');
+        const submitBtn = widget.querySelector('#askAiSubmit');
+
+        if (toggleBtn && panel) {
+            toggleBtn.addEventListener('click', () => {
+                panel.classList.toggle('open');
+            });
+        }
+        if (closeBtn && panel) {
+            closeBtn.addEventListener('click', () => {
+                panel.classList.remove('open');
+            });
+        }
+        if (submitBtn) {
+            submitBtn.addEventListener('click', askAI);
+        }
+
+        // Pre-populate subject if detectable
+        const detectedSubject = detectSubject();
+        const subjectRow = widget.querySelector('#askAiSubjectRow');
+        const subjectSelect = widget.querySelector('#askAiSubject');
+        if (subjectSelect) {
+            if (detectedSubject) {
+                subjectSelect.value = detectedSubject;
+                subjectRow.style.display = 'none';
+            } else {
+                subjectRow.style.display = 'block';
+            }
+        }
+    }
+
+    async function askAI() {
+        const questionInput = document.getElementById('aiQuestion');
+        const answerEl = document.getElementById('aiAnswer');
+
+        if (!questionInput || !answerEl) return;
+
+        const question = questionInput.value.trim();
+        if (!question) {
+            answerEl.textContent = 'Please enter a question.';
+            return;
+        }
+
+        const pageText = getPageText();
+        const subject = detectSubject() || getSelectedSubject();
+
+        answerEl.textContent = 'Thinking…';
+
+        try {
+            const res = await fetch('/api/ask', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ question, pageText, subject })
+            });
+
+            if (!res.ok) throw new Error('Server error');
+            const data = await res.json();
+            answerEl.textContent = (data && data.answer) ? data.answer : 'No response';
+        } catch (err) {
+            answerEl.textContent = 'Error: unable to get an answer right now.';
+        }
+    }
+
+    function getPageText() {
+        // Prefer explicit study content container if present
+        const idContent = document.getElementById('study-content');
+        if (idContent) return idContent.innerText.trim();
+
+        const classContent = document.querySelector('.study-content');
+        if (classContent) return classContent.innerText.trim();
+
+        const main = document.querySelector('main');
+        if (main) return main.innerText.trim();
+
+        return document.body.innerText.trim();
+    }
+
+    function detectSubject() {
+        // Check data-subject attribute on containers
+        const idContent = document.getElementById('study-content');
+        if (idContent && idContent.dataset && idContent.dataset.subject) {
+            return idContent.dataset.subject;
+        }
+        const classContent = document.querySelector('.study-content');
+        if (classContent && classContent.dataset && classContent.dataset.subject) {
+            return classContent.dataset.subject;
+        }
+        // Try inferring from URL path (folder name)
+        const parts = window.location.pathname.split('/').filter(Boolean);
+        if (parts.length) {
+            const folder = parts[parts.length - 2] || parts[parts.length - 1];
+            if (folder) {
+                const normalized = folder.toLowerCase();
+                if (['christology','biology','history','ajof','freshman-english','freshman-revelations'].includes(normalized)) {
+                    return normalized;
+                }
+            }
+        }
+        return null;
+    }
+
+    function getSelectedSubject() {
+        const select = document.getElementById('askAiSubject');
+        return select ? select.value : null;
+    }
 });
