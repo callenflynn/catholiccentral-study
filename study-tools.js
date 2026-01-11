@@ -295,16 +295,21 @@ document.addEventListener('DOMContentLoaded', function() {
         if (classContent && classContent.dataset && classContent.dataset.subject) {
             return classContent.dataset.subject;
         }
-        // Try inferring from URL path (folder name)
+        // Infer from URL path using top-level folder (e.g., /biology/..., /ajof/...)
         const parts = window.location.pathname.split('/').filter(Boolean);
         if (parts.length) {
-            const folder = parts[parts.length - 2] || parts[parts.length - 1];
-            if (folder) {
-                const normalized = folder.toLowerCase();
-                if (['christology','biology','history','ajof','freshman-english','freshman-revelations'].includes(normalized)) {
-                    return normalized;
-                }
-            }
+            const top = parts[0].toLowerCase();
+            const aliases = {
+                aerospace: 'ajof',
+                'aerospace-journey-of-flight': 'ajof',
+                christology: 'christology',
+                biology: 'biology',
+                history: 'history',
+                ajof: 'ajof',
+                'freshman-english': 'freshman-english',
+                'freshman-revelations': 'freshman-revelations',
+            };
+            if (aliases[top]) return aliases[top];
         }
         return null;
     }
