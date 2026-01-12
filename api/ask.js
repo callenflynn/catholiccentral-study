@@ -18,9 +18,14 @@ export default async function handler(req, res) {
       const ranked = chunks
         .map(c => ({ ...c, score: scoreChunk(c.text, question) }))
         .sort((a, b) => b.score - a.score)
-        .slice(0, 6); 
+        .slice(0, 6);
 
       contextText = ranked.map(c => c.text).join('\n\n');
+    }
+
+    const MAX_CHARS = 6000;
+    if (contextText.length > MAX_CHARS) {
+      contextText = contextText.slice(0, MAX_CHARS);
     }
 
     const prompt = `
@@ -42,7 +47,7 @@ Answer:
 `;
 
     const response = await fetch(
-      'https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct',
+      'https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta',
       {
         method: 'POST',
         headers: {
@@ -61,13 +66,18 @@ Answer:
       }
     );
 
-    if (!response.ok) {
-      const text = await response.text();
-      res.status(500).json({ error: 'HF API error', details: text });
-      return;
+    const raw = await response.text();
+
+    let data;
+    try {
+      data = JSON.parse(raw);
+    } catch {
+      return res.status(500).json({
+        error: 'HuggingFace returned invalid JSON',
+        raw: raw.slice(0, 300),
+      });
     }
 
-    const data = await response.json();
     const answer = Array.isArray(data)
       ? data[0]?.generated_text
       : data?.generated_text;
