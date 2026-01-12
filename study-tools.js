@@ -229,16 +229,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Pre-populate subject if detectable
-        const detectedSubject = detectSubject();
         const subjectRow = widget.querySelector('#askAiSubjectRow');
-        const subjectSelect = widget.querySelector('#askAiSubject');
-        if (subjectSelect) {
-            if (detectedSubject) {
-                subjectSelect.value = detectedSubject;
-                subjectRow.style.display = 'none';
-            } else {
-                subjectRow.style.display = 'block';
-            }
+        if (subjectRow) {
+            subjectRow.style.display = 'none'; // Site-wide mode: hide subject selector
         }
     }
 
@@ -255,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const pageText = getPageText();
-        const subject = detectSubject() || getSelectedSubject();
+        const subject = 'all'; // Site-wide aggregation on server
 
         answerEl.textContent = 'Thinking…';
 
@@ -288,37 +281,5 @@ document.addEventListener('DOMContentLoaded', function() {
         return document.body.innerText.trim();
     }
 
-    function detectSubject() {
-        // Check data-subject attribute on containers
-        const idContent = document.getElementById('study-content');
-        if (idContent && idContent.dataset && idContent.dataset.subject) {
-            return idContent.dataset.subject;
-        }
-        const classContent = document.querySelector('.study-content');
-        if (classContent && classContent.dataset && classContent.dataset.subject) {
-            return classContent.dataset.subject;
-        }
-        // Infer from URL path using top-level folder (e.g., /biology/..., /ajof/...)
-        const parts = window.location.pathname.split('/').filter(Boolean);
-        if (parts.length) {
-            const top = parts[0].toLowerCase().replace(/\.html$/, '');
-            const aliases = {
-                aerospace: 'ajof',
-                'aerospace-journey-of-flight': 'ajof',
-                christology: 'christology',
-                biology: 'biology',
-                history: 'history',
-                ajof: 'ajof',
-                'freshman-english': 'freshman-english',
-                'freshman-revelations': 'freshman-revelations',
-            };
-            if (aliases[top]) return aliases[top];
-        }
-        return null;
-    }
-
-    function getSelectedSubject() {
-        const select = document.getElementById('askAiSubject');
-        return select ? select.value : null;
-    }
+    // Subject detection disabled in site-wide mode
 });

@@ -14,7 +14,8 @@ export default async function handler(req, res) {
     // If a subject is provided, aggregate content across known pages for that subject; else use pageText
     const aggregated = await getSubjectContent(req, subject);
     const contextText = aggregated || pageText || '';
-    const prompt = `You are a tutor helping a student.\nSubject: ${subject || 'unknown'}\nHere are study materials for this subject:\n${contextText}\n\nAnswer the student’s question clearly and only based on this subject:\n${question}`;
+    const isAll = !subject || subject === 'all';
+    const prompt = `You are a tutor helping a student.\nScope: ${isAll ? 'site-wide (all classes)' : `subject: ${subject}`}\nHere are the study materials:\n${contextText}\n\nAnswer the student’s question clearly and only based on these materials:\n${question}`;
 
     const response = await fetch(
       'https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct',
@@ -44,13 +45,37 @@ export default async function handler(req, res) {
 }
 
 async function getSubjectContent(req, subject) {
-  if (!subject) return null;
+  // If no subject or 'all', aggregate the entire site via sitemap
+  if (!subject || subject === 'all') {
+    const host = req.headers.host ? `https://${req.headers.host}` : null;
+    const urls = await getAllUrlsFromSitemap(host);
+    return await aggregateUrls(urls);
+  }
   const host = req.headers.host ? `https://${req.headers.host}` : null;
   // Try using sitemap to include all pages for subject
   const texts = [];
   const urls = await getSubjectUrlsFromSitemap(host, subject);
+  return await aggregateUrls(urls);
+}
+async function getAllUrlsFromSitemap(host) {
+  if (!host) return null;
+  try {
+    const resp = await fetch(`${host}/sitemap.xml`);
+    if (!resp.ok) return null;
+    const xml = await resp.text();
+    const locs = Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g)).map(m => m[1]);
+    return locs;
+  } catch {
+    return null;
+  }
+}
+
+async function aggregateUrls(urls) {
   if (!urls || urls.length === 0) return null;
-  for (const url of urls) {
+  const texts = [];
+  // Limit to avoid overly large prompts; adjust as needed
+  const capped = urls.slice(0, 30);
+  for (const url of capped) {
     try {
       const resp = await fetch(url);
       if (!resp.ok) continue;
