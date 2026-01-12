@@ -189,7 +189,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="ask-ai-close" aria-label="Close">×</button>
                 </div>
                 <div class="ask-ai-body">
+                    <input type="text" id="aiQuestion" class="ask-ai-input" placeholder="Type your question..." />
+                    <button id="askAiSubmit" class="btn btn-primary ask-ai-submit">Ask</button>
+                    <div id="aiAnswer" class="ask-ai-answer" aria-live="polite"></div>
+                </div>
+            </div>
+        `;
 
+        document.body.appendChild(widget);
 
         const toggleBtn = widget.querySelector('.ask-ai-toggle');
         const closeBtn = widget.querySelector('.ask-ai-close');
