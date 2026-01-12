@@ -189,25 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="ask-ai-close" aria-label="Close">×</button>
                 </div>
                 <div class="ask-ai-body">
-                    <div class="ask-ai-subject-row" id="askAiSubjectRow" style="display:none; margin-bottom:8px;">
-                        <label for="askAiSubject" style="display:block; font-size:0.9rem; color:#666; margin-bottom:4px;">Subject</label>
-                        <select id="askAiSubject" class="ask-ai-input">
-                                <option value="christology">Christology</option>
-                                <option value="biology">Biology</option>
-                                <option value="ajof">Aerospace Journey of Flight</option>
-                                <option value="freshman-revelations">Freshman Revelations</option>
-                                <option value="freshman-english">Freshman English</option>
-                                <option value="history">History</option>
-                        </select>
-                    </div>
-                    <input type="text" id="aiQuestion" class="ask-ai-input" placeholder="Type your question..." />
-                    <button id="askAiSubmit" class="btn btn-primary ask-ai-submit">Ask</button>
-                    <div id="aiAnswer" class="ask-ai-answer" aria-live="polite"></div>
-                </div>
-            </div>
-        `;
 
-        document.body.appendChild(widget);
 
         const toggleBtn = widget.querySelector('.ask-ai-toggle');
         const closeBtn = widget.querySelector('.ask-ai-close');
@@ -226,12 +208,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (submitBtn) {
             submitBtn.addEventListener('click', askAI);
-        }
-
-        // Pre-populate subject if detectable
-        const subjectRow = widget.querySelector('#askAiSubjectRow');
-        if (subjectRow) {
-            subjectRow.style.display = 'none'; // Site-wide mode: hide subject selector
         }
     }
 
