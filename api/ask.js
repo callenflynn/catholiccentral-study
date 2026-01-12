@@ -78,9 +78,12 @@ Answer:
       });
     }
 
-    const answer = Array.isArray(data)
-      ? data[0]?.generated_text
-      : data?.generated_text;
+const rawAnswer = Array.isArray(data)
+  ? data[0]?.generated_text
+  : data?.generated_text;
+
+const answer = rawAnswer?.split("Answer:").pop()?.trim();
+
 
     res.status(200).json({ answer: answer || 'No response' });
   } catch (err) {
