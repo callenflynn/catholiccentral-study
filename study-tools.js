@@ -192,9 +192,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="ask-ai-subject-row" id="askAiSubjectRow" style="display:none; margin-bottom:8px;">
                         <label for="askAiSubject" style="display:block; font-size:0.9rem; color:#666; margin-bottom:4px;">Subject</label>
                         <select id="askAiSubject" class="ask-ai-input">
-                            <option value="christology">Christology</option>
-                            <option value="biology">Biology</option>
-                            <option value="history">History</option>
+                                <option value="christology">Christology</option>
+                                <option value="biology">Biology</option>
+                                <option value="ajof">Aerospace Journey of Flight</option>
+                                <option value="freshman-revelations">Freshman Revelations</option>
+                                <option value="freshman-english">Freshman English</option>
+                                <option value="history">History</option>
                         </select>
                     </div>
                     <input type="text" id="aiQuestion" class="ask-ai-input" placeholder="Type your question..." />
