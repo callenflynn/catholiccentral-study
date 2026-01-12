@@ -78,12 +78,19 @@ Answer:
       });
     }
 
-const rawAnswer = Array.isArray(data)
-  ? data[0]?.generated_text
-  : data?.generated_text;
+    let rawAnswer = '';
 
-const answer = rawAnswer?.split("Answer:").pop()?.trim();
+    if (Array.isArray(data)) {
+      if (data[0]?.generated_text) {
+        rawAnswer = data[0].generated_text;
+      } else if (data[0]?.tokens) {
+        rawAnswer = data[0].tokens.map(t => t.text).join('');
+      }
+    } else if (data?.generated_text) {
+      rawAnswer = data.generated_text;
+    }
 
+    const answer = rawAnswer.split('Answer:').pop().trim();
 
     res.status(200).json({ answer: answer || 'No response' });
   } catch (err) {
