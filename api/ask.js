@@ -46,36 +46,12 @@ export default async function handler(req, res) {
 async function getSubjectContent(req, subject) {
   if (!subject) return null;
   const host = req.headers.host ? `https://${req.headers.host}` : null;
-  const map = {
-    christology: [
-      '/christology/index.html',
-      '/christology/blessed-trinity-reading-2.html',
-      '/christology/blessed-trinity-reading-2-summary.html',
-    ],
-    biology: [
-      '/biology/index.html',
-      '/biology/ch6/index.html',
-      '/biology/ch8/part1/photosynthesis/index.html',
-    ],
-    'freshman-english': [
-      '/freshman-english/index.html',
-    ],
-    'freshman-revelations': [
-      '/freshman-revelations/index.html',
-      '/freshman-revelations/man-or-rabbit.html',
-    ],
-    ajof: [
-      '/ajof/index.html',
-      '/ajof/ch9/index.html',
-    ],
-    history: [],
-  };
-  const paths = map[subject];
-  if (!paths || paths.length === 0) return null;
+  // Try using sitemap to include all pages for subject
   const texts = [];
-  for (const p of paths) {
+  const urls = await getSubjectUrlsFromSitemap(host, subject);
+  if (!urls || urls.length === 0) return null;
+  for (const url of urls) {
     try {
-      const url = host ? `${host}${p}` : p;
       const resp = await fetch(url);
       if (!resp.ok) continue;
       const html = await resp.text();
@@ -98,5 +74,39 @@ function htmlToText(html) {
     return text;
   } catch {
     return null;
+  }
+}
+
+async function getSubjectUrlsFromSitemap(host, subject) {
+  if (!host) return null;
+  try {
+    const resp = await fetch(`${host}/sitemap.xml`);
+    if (!resp.ok) return null;
+    const xml = await resp.text();
+    const locs = Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g)).map(m => m[1]);
+    const patterns = subjectPatterns(subject);
+    const urls = locs.filter(u => patterns.some(p => u.includes(p)));
+    return urls;
+  } catch {
+    return null;
+  }
+}
+
+function subjectPatterns(subject) {
+  switch (subject) {
+    case 'christology':
+      return ['/christology/'];
+    case 'biology':
+      return ['/biology/', '/biology.html'];
+    case 'freshman-english':
+      return ['/freshman-english/', '/freshman-english.html', '/smith-english.html'];
+    case 'freshman-revelations':
+      return ['/freshman-revelations/', '/freshman-revelations.html'];
+    case 'ajof':
+      return ['/ajof/', '/aerospace-journey-of-flight', '/aerospace-chapter-'];
+    case 'history':
+      return ['/history/', '/history.html'];
+    default:
+      return [`/${subject}/`, `/${subject}.html`];
   }
 }

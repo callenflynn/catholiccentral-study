@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Infer from URL path using top-level folder (e.g., /biology/..., /ajof/...)
         const parts = window.location.pathname.split('/').filter(Boolean);
         if (parts.length) {
-            const top = parts[0].toLowerCase();
+            const top = parts[0].toLowerCase().replace(/\.html$/, '');
             const aliases = {
                 aerospace: 'ajof',
                 'aerospace-journey-of-flight': 'ajof',
