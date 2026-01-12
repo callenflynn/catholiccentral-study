@@ -90,9 +90,14 @@ Answer:
       rawAnswer = data.generated_text;
     }
 
-    const answer = rawAnswer.split('Answer:').pop().trim();
+    let answer = rawAnswer;
+    if (answer.includes('Answer:')) {
+      answer = answer.split('Answer:').pop().trim();
+    } else if (answer.includes(question)) {
+      answer = answer.split(question).pop().trim();
+    }
 
-    res.status(200).json({ answer: answer || 'No response' });
+    res.status(200).json({ answer: answer || 'No response from AI. Please try again.' });
   } catch (err) {
     res.status(500).json({ error: 'Server error', details: String(err) });
   }
