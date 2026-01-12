@@ -88,6 +88,17 @@ Answer:
       }
     } else if (data?.generated_text) {
       rawAnswer = data.generated_text;
+    } else if (data?.error) {
+      return res.status(503).json({ 
+        answer: `AI model is loading. This usually takes 20-30 seconds. Please try again in a moment.`
+      });
+    }
+
+    if (!rawAnswer) {
+      console.error('Empty rawAnswer. Full data:', JSON.stringify(data));
+      return res.status(200).json({ 
+        answer: 'The AI did not generate a response. Please try rephrasing your question or try again.'
+      });
     }
 
     let answer = rawAnswer;
@@ -97,7 +108,13 @@ Answer:
       answer = answer.split(question).pop().trim();
     }
 
-    res.status(200).json({ answer: answer || 'No response from AI. Please try again.' });
+    // If answer is still just the prompt, try to get everything after the last newline
+    if (answer === rawAnswer && answer.includes('\n')) {
+      const lines = answer.split('\n').filter(l => l.trim());
+      answer = lines[lines.length - 1];
+    }
+
+    res.status(200).json({ answer: answer || 'No clear answer found. Please try rephrasing your question.' });
   } catch (err) {
     res.status(500).json({ error: 'Server error', details: String(err) });
   }
